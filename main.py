@@ -1,4 +1,4 @@
-import csv
+
 from csv import DictReader, DictWriter
 from os.path import exists
 class LenNumberError:
@@ -55,7 +55,7 @@ def write_file(file_name):
         f_writer.writerows(res)
 
 def copy_data(file_name, file_name_copy, line_number):
-    line_number = int(input("введите строчку, которую хотите копировать: "))
+    line_number = int(input("введите строчку, которую хотите копировать: "))     ### строчка для копирования
     res = read_file(file_name)
     with open(file_name_copy, 'a', encoding='utf-8', newline='') as copy_data:
         f_writer = DictWriter(copy_data, fieldnames=['имя', 'фамилия', 'телефон'])
