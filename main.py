@@ -54,17 +54,11 @@ def write_file(file_name):
         f_writer.writeheader()
         f_writer.writerows(res)
 
-def copy_data(file_name, file_name_copy, line_number):
-    line_number = int(input("введите строчку, которую хотите копировать: "))     ### строчка для копирования
-    res = read_file(file_name)
-    with open(file_name_copy, 'a', encoding='utf-8', newline='') as copy_data:
-        f_writer = DictWriter(copy_data, fieldnames=['имя', 'фамилия', 'телефон'])
-        if line_number <= len(res):
-            f_writer.writerow(res[line_number - 1])
+
 
   
 file_name = 'phone.csv'
-file_name_copy = 'phone2.csv'
+
 
 def main():
     while True:
@@ -80,15 +74,7 @@ def main():
                 print("Файл не создан. Создайте его.")
                 continue
             print(*read_file(file_name))
-        elif command == 'c':
-            
-            if not exists(file_name_copy):
-                create_file(file_name_copy)
-            copy_data(file_name, file_name_copy,1)
-            
-           
-            
-           
+      
            
            
             
